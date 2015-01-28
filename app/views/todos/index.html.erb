@@ -9,6 +9,6 @@
 <% end %>
 <ul>
 <% @todos.each do |task| %>
-  <li><%= task.content %></li>
+  <li data-id="<%=task.id%>"><%= task.content %>   <span>X</span></li>
 <% end %>
 </ul>

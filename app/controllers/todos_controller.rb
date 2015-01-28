@@ -11,8 +11,14 @@ class TodosController < ApplicationController
       puts "It worked!"
       render json: @todo
     else
-      puts "It didn't work"
+      render json: @todo.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @todo = Todo.find(params[:id])
+    @todo.destroy
+    render json: @todo
   end
 
   private
