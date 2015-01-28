@@ -12,7 +12,7 @@ $(document).ready(function() {
     }
     }).done(function(data) {
       $('#todo_content').val('');
-      var new_todo = "<li>" + data.content + " <span>X</span> </li>";
+      var new_todo = '<li data-id="' + data.id +'">' + data.content + ' <span>X</span> </li>';
       $('ul').append(new_todo);
     }).fail(function(data){
 
